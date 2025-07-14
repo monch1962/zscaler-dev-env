@@ -236,13 +236,13 @@ graph TD
 
     E[Zscaler Test Tenant]
 
-    A -- "1. podman run zscaler-cli" --> B
-    B -- "2. hoverctl mode capture" --> C
-    B -- "3. Run zscaler_api_test.py" --> C
-    C -- "4. Proxy API Calls" --> E
-    E -- "5. Send Real Responses" --> C
-    C -- "6. Store Responses" --> D
-    B -- "7. hoverctl export simulation.json" --> D
+    A -- (1. podman run zscaler-cli) --> B
+    B -- (2. hoverctl mode capture) --> C
+    B -- (3. Run zscaler_api_test.py) --> C
+    C -- (4. Proxy API Calls) --> E
+    E -- (5. Send Real Responses) --> C
+    C -- (6. Store Responses) --> D
+    B -- (7. hoverctl export simulation.json) --> D
 ```
 
 Simulate Workflow
@@ -259,12 +259,12 @@ graph TD
         D[hoverfly-data Volume]
     end
 
-    A -- "1. podman run zscaler-cli" --> B
-    B -- "2. hoverctl import simulation.json" --> D
-    D -- "3. Load Simulation" --> C
-    B -- "4. hoverctl mode simulate" --> C
-    B -- "5. Run zscaler_api_test.py" --> C
-    C -- "6. Serve Mocked Responses" --> B
+    A -- (1 podman run zscaler-cli) --> B
+    B -- (2 hoverctl import simulation.json) --> D
+    D -- (3 Load Simulation) --> C
+    B -- (4 hoverctl mode simulate) --> C
+    B -- (5 Run zscaler_api_test.py) --> C
+    C -- (6 Serve Mocked Responses) --> B
 ```
 
 # Contributing
