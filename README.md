@@ -114,7 +114,7 @@ podman run -it --rm --pod zscaler-dev-pod --name zscaler-cli \
   zscaler-dev-cli
 ```
 
-Important: Replace the <YOUR_...> placeholders with your actual Zscaler test tenant credentials. The ZSCALER_CLOUD is typically part of your Zscaler admin URL (e.g., zscalerone.net or zscloud.net).
+Important: Replace the `<YOUR_...>` placeholders with your actual Zscaler test tenant credentials. The `ZSCALER_CLOUD` is typically part of your Zscaler admin URL (e.g., `zscalerone.net` or `zscloud.net`).
 
 Workflow: Capture Zscaler API Traffic
 This workflow is used to record real API interactions from your Zscaler test tenant, creating a simulation file for Hoverfly.
