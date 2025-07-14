@@ -1,6 +1,15 @@
 # Zscaler API Development & Mocking Environment with Podman and Hoverfly
 
-This repository provides a self-contained Podman-based environment for developing and testing Zscaler API automation scripts using the `zscaler-sdk-python`. It leverages Hoverfly to capture real Zscaler API traffic from a test tenant and then simulate those responses for local, offline testing, eliminating the need to hit actual Zscaler environments during development cycles.
+This repository provides a self-contained Podman-based environment for developing and testing Zscaler API automation scripts using the `zscaler-sdk-python` library. It leverages Hoverfly to capture real Zscaler API traffic to/from a test tenancy and then simulate those responses for local, offline testing, eliminating the need to hit actual Zscaler environments during development cycles.
+
+The expected workflow is as follows:
+
+- developer leverages the `zscaler-sdk-python` library to generate API traffic against a non-production Zscaler environment
+  - note: using `zscaler-sdk-python` is not the only way to generate Zscaler API traffic. Other approaches can be used to generate the API traffic if appropriate.
+- the generated API traffic (sets of request/response pairs) is captured by Hoverfly running in capture mode
+- once the required range of Zscaler request/response API pairs have been captured, switch Hoverfly over to simulation mode
+- at this point, Hoverfly will simulate the behaviour of the Zscaler APIs, using the previously captured traffic as a reference
+- developer can now build and test their Hoverfly IaC against Hoverfly's mock of the Zscaler APIs
 
 ## Table of Contents
 
